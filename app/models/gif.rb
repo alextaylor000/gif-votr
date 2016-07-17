@@ -1,4 +1,5 @@
 class Gif < ApplicationRecord
+  has_one :ranking
   has_many :votes
 
   validates_presence_of :image
@@ -7,5 +8,6 @@ class Gif < ApplicationRecord
 
   mount_uploader :image, GifUploader
 
+  delegate :rank, to: :ranking
   delegate :upvotes, :downvotes, to: :votes
 end
