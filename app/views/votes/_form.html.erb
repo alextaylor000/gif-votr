@@ -1,0 +1,11 @@
+<%= form_for [gif, gif.votes.build] do |f| %>
+  <%= f.hidden_field :value, value: vote_value %>
+
+  <% if vote_value == 1 %>
+    <%= f.submit "Upvote" %>
+  <% end %>
+
+  <% if vote_value == -1%>
+    <%= f.submit "Downvote" %>
+  <% end %>
+<% end %>

@@ -1,7 +1,9 @@
 class Gif < ApplicationRecord
+  has_many :votes
+
   validates_presence_of :image
 
-  mount_uploader :image, GifUploader
-
   scope :order_by_id, ->() { order(:id) }
+
+  mount_uploader :image, GifUploader
 end

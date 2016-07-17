@@ -1,3 +1,5 @@
 <div>
   <%= image_tag gif.image.url %>
+  <%= render partial: 'votes/form', locals: { gif: gif, vote_value: 1  } %>
+  <%= render partial: 'votes/form', locals: { gif: gif, vote_value: -1 } %>
 </div>
