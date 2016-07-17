@@ -1,5 +1,12 @@
 <div>
+  <div>
+    <ul>
+      <li>down: <%= gif.downvotes.count %></li>
+      <li>up: <%= gif.upvotes.count %></li>
+    </ul>
+  </div>
   <%= image_tag gif.image.url %>
   <%= render partial: 'votes/form', locals: { gif: gif, vote_value: 1  } %>
   <%= render partial: 'votes/form', locals: { gif: gif, vote_value: -1 } %>
 </div>
+<hr />

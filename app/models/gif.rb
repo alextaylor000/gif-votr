@@ -6,4 +6,6 @@ class Gif < ApplicationRecord
   scope :order_by_id, ->() { order(:id) }
 
   mount_uploader :image, GifUploader
+
+  delegate :upvotes, :downvotes, to: :votes
 end
