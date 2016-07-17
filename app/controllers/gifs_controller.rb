@@ -1,6 +1,6 @@
 class GifsController < ApplicationController
   def index
-    @gifs = Gif.order_by_id
+    @gifs = Gif.order_by_rank
   end
 
   def new
