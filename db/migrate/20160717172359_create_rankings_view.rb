@@ -7,6 +7,7 @@ class CreateRankingsView < ActiveRecord::Migration[5.0]
         FROM votes GROUP BY gif_id)
 
         SELECT total_votes.*,
+        row_number() OVER () AS id,
         rank() OVER (ORDER BY total_votes.score DESC) AS rank
         FROM total_votes
       )
